@@ -1,0 +1,15 @@
+//console.dir(document);
+//console.log(document.URL);
+//console.log(document.title);
+//document.title="hello";
+//console.log(document.all[10]);
+//console.log(document.forms[0]);
+//console.log(document.body);
+//console.log(document.head);
+//console.log(document.links);
+//console.log(document.images);
+var header=document.getElementById("main-header");
+header.style.borderBlock='solid 3px black';
+var title=document.all[14];
+title.style.color='green';
+title.style.fontWeight='bold';
