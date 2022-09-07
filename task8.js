@@ -1,6 +1,6 @@
 var form=document.getElementById('addForm');
 var itemlist=document.getElementById('items');
-//form sublit event
+//form submit event
 form.addEventListener('submit',addnewitemtolist)
 //delete event
 itemlist.addEventListener('click',removefromlist)
@@ -27,7 +27,7 @@ function addnewitemtolist(e){
     var editbutton=document.createElement('button');
     //add classname
     editbutton.className='btn  btn-sm float-right';
-    editbutton.appendChild(document.createTextNode('Edit'));
+    editbutton.appendChild(document.createTextNode('EDIT'));
     li.appendChild(editbutton);
     //add to itemlist
     itemlist.appendChild(li);
