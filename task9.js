@@ -16,6 +16,7 @@ function addnewitemtolist(e){
     li.className='list-group-item';
     //add textnode with input value
     li.appendChild(document.createTextNode(listitem));
+    //<br></br>
     //add desription
     li.appendChild(document.createTextNode(descript));
     //create delete button

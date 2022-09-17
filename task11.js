@@ -1,5 +1,4 @@
 var form=document.querySelector('#myform');
-
 form.addEventListener('submit',onsubmit);
 function onsubmit(e){
     e.preventDefault();
@@ -15,6 +14,7 @@ function onsubmit(e){
         email,
         phone
     }
+
 localStorage.setItem('userdetails',JSON.stringify(obj))
 
 }

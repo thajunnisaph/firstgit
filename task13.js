@@ -29,7 +29,7 @@ function onsubmit(e){
     e.target.email.value=objun.email;
     e.target.phonenumber.value=objun.phone;
     li.remove();
-    //localStorage.removeItem(`userdetails ${obj.email}`);
+    localStorage.removeItem(`userdetails ${obj.email}`);
    });
    var deletebutton=document.createElement('button');
     //add classname
@@ -45,4 +45,7 @@ function onsubmit(e){
     localStorage.removeItem(`userdetails ${obj.email}`);}
     });
    list.appendChild(li);  
+   document.getElementById('name').value='';
+    document.getElementById('email').value='';
+    document.getElementById('phonenumber').value='';
 }

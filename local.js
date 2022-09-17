@@ -1,12 +1,13 @@
 var form=document.querySelector('#myform');
-const nameinput=document.querySelector('#name');
-const email=document.querySelector('#email');
-const phone=document.querySelector('#phonenumber');
 
 form.addEventListener('submit',onsubmit);
 function onsubmit(e){
     e.preventDefault();
-localStorage.setItem('name',nameinput.value)
-localStorage.setItem('email',email.value)
-localStorage.setItem('phonenumber',phone.value)
+const nameinput=document.querySelector('#name').value;
+const email=document.querySelector('#email').value;
+const phone=document.querySelector('#phonenumber').value;
+
+localStorage.setItem('name',nameinput)
+localStorage.setItem('email',email)
+localStorage.setItem('phonenumber',phone)
 }
