@@ -62,7 +62,7 @@ Promise.all([createpost({title:'post3',body:'This is post3'}),updatelastuseracti
     console.log(posts,`last activity time: ${user.lastactivitytime}`);
 }).catch(error =>console.log(error));
 Promise.all([createpost({title:'post3',body:'This is post3'}),updatelastuseractivity]).then(() =>{deletepost().then(()=>{
-    console.log(posts,);
+    console.log(posts);
 }).catch(error =>console.log(error))}).catch(error => console.log(error));
 
 
