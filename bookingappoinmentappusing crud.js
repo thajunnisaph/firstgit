@@ -1,3 +1,14 @@
+
+document.addEventListener("DOMContentLoaded",(event) =>{
+    axios.get("https://crudcrud.com/api/7bec2c80f6714ae283c4d6a50782fb46/appoinmentdtls")
+    .then(res =>{ 
+        console.log(res);
+      for(var i=0;i<res.data.length;i++)
+      {
+        createElement(res.data[i]);
+      }
+    })
+})
 var form=document.querySelector('#myform');
 var list=document.querySelector('.booked_details');
 form.addEventListener('submit',onsubmit);
