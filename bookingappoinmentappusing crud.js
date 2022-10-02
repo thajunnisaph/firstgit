@@ -1,13 +1,13 @@
 
 document.addEventListener("DOMContentLoaded",(event) =>{
-    axios.get("https://crudcrud.com/api/7bec2c80f6714ae283c4d6a50782fb46/appoinmentdtls")
+    axios.get("https://crudcrud.com/api/15bec583cc81461da973bdf7c64cdad3/appoinmentdtls")
     .then(res =>{ 
         console.log(res);
       for(var i=0;i<res.data.length;i++)
       {
         createElement(res.data[i]);
       }
-    })
+    }).catch(err =>console.log(err))
 })
 var form=document.querySelector('#myform');
 var list=document.querySelector('.booked_details');
@@ -22,10 +22,8 @@ function onsubmit(e){
         email,
         phone
     }
-    // localStorage.setItem(`userdetails ${obj.email}`,JSON.stringify(obj))
-   //localStorage.getItem(`userdetails ${obj.email}`);
-//    var objun=JSON.parse(localStorage.getItem(`userdetails ${obj.email}`));
-axios.post("https://crudcrud.com/api/7bec2c80f6714ae283c4d6a50782fb46/appoinmentdtls",obj)
+   
+axios.post("https://crudcrud.com/api/15bec583cc81461da973bdf7c64cdad3/appoinmentdtls",obj)
 .then((res) =>{
     createElement(res.data);
     console.log(res)})
@@ -49,8 +47,12 @@ axios.post("https://crudcrud.com/api/7bec2c80f6714ae283c4d6a50782fb46/appoinment
     document.getElementById("name").value=objun.name;
     document.getElementById("email").value=objun.email;
     document.getElementById("phonenumber").value=objun.phone;
-    li.remove();
-    // localStorage.removeItem(`userdetails ${obj.email}`);
+    axios.delete(`https://crudcrud.com/api/15bec583cc81461da973bdf7c64cdad3/appoinmentdtls/${objun._id}`)
+          .then((res) => li.remove())
+          .catch((err) =>{ 
+          alert("something went wrong")
+          console.log(err);})
+    
    });
    var deletebutton=document.createElement('button');
     //add classname
@@ -62,8 +64,11 @@ axios.post("https://crudcrud.com/api/7bec2c80f6714ae283c4d6a50782fb46/appoinment
     li.appendChild(deletebutton);
     deletebutton.addEventListener('click',() => {
         if(confirm('Are you sure you want to delete?')){
-    li.remove();
-//     localStorage.removeItem(`userdetails ${obj.email}`);
+          axios.delete(`https://crudcrud.com/api/15bec583cc81461da973bdf7c64cdad3/appoinmentdtls/${objun._id}`)
+          .then((res) => li.remove())
+          .catch((err) =>{ 
+          alert("something went wrong")
+          console.log(err);})
  }
     });
    list.appendChild(li);  
