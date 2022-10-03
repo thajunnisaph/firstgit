@@ -54,7 +54,7 @@ async function fun() {
     await getposts();
     await deletepost();
     await getposts();
-    
+
 }
 
 fun();

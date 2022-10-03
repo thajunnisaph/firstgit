@@ -19,7 +19,7 @@ let butter=await getbutter;
     console.log(`husband: got ${butter} we should go in`);
 let colddrinks=await getColddrinks;
 
-console.log(`husband: got ${colddrinks} we should go in`);
+console.log(`husband:got ${colddrinks} we should go in`);
 console.log('wife:yes')
 return ticket;                                                                   
 }    
